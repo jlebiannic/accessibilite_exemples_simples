@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liens évitement</title>
+    <style>
+        body {
+            overflow-x: hidden;
+            margin: 0;
+        }
+        .sr-only {
+            position: absolute;
+            left: -5000px;
+        }
+
+        a.sr-only:focus {
+            left: 0;
+            border: solid 2px;
+            padding: 20px;
+        }
+
+        nav {
+            height: 60px;
+            box-shadow: 2px 4px 7px grey;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li>
+            <a class="sr-only" href="#menu">Contenu principal</a>
+        </li>
+        <li>
+            <a class="sr-only" href="#menu2">Contenu secondaire</a>
+        </li>
+    </ul>
+    <!-- Liste de liens -->
+</nav>
+
+<header>
+    <h1>Mon site</h1>
+</header>
+
+<main id="main">
+    <a tabindex="-1" id="menu" aria-labelledby="t1"></a>
+    <h2 id="t1">Mon titre</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid earum eligendi, eum eveniet illum necessitatibus nemo perferendis sint. Adipisci aperiam blanditiis cupiditate distinctio fuga laboriosam maiores obcaecati quasi reiciendis repellendus?</p>
+</main>
+
+<aside>
+    <a tabindex="-1" id="menu2"></a>
+    <h2>Secondaire</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat sint tenetur unde veniam voluptas! Adipisci alias corporis dolorem eius excepturi, expedita iusto natus perspiciatis possimus quibusdam, ratione vel, vero voluptatibus?</p>
+</aside>
+
+</body>
+</html>

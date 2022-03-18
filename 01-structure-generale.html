@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- user-scalable=no => a ne pas utiliser, ça empêche le zoom -->
+        <title>Mon site : Accueil</title>
+        <meta name="description" content="Description courte et claire de la page">
+        <link rel="icon" href="images/favicon.ico">
+    </head>
+
+    <body>
+        <!-- Navigation : encadrer un groupe de navigation.
+             - Dans le menu / La barre de nav
+             - Ou tout autre groupe de lien secondaire
+             - ! Les liens doivent être dans une liste
+         -->
+        <nav>
+            <div>
+                <a href="#">Logo</a>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">Accueil</a>
+                </li>
+                <li>
+                    <a href="#">Machin</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Entête
+        Titre, présentation, logo...
+        On peut en mettre plusieurs dans la page ( entête de page, d'article, de card...)
+        -->
+        <header></header>
+
+       <!-- Contenu principal de la page
+       - Un seul main (visible) dans la page
+       - Contenu que recherche l'user, unique
+       -->
+        <main></main>
+
+        <!-- Contenu secondaire de la page :
+        Informations en relation avec le main,
+        Présentation de l'auteur.trice de l'article, liens associés, ...
+        -->
+        <aside></aside>
+
+
+        <!-- Pied de page :
+        - Un footer pour la page elle même, mais on peut avoir des footer d'articles, ou autre
+        - Infos sur le site
+        ( mentions légales, copyright, réseaux sociaux, contact, newsletter, ....)
+        - Navigation / "Plan du site"
+        -->
+        <footer></footer>
+
+
+        <!-- Articles :
+        Un contenu dont le sens se suffit à lui même
+        - fiche produit, un message de forum, ..
+        -->
+        <article></article>
+
+        <!-- Section :
+        Sous-parties, groupes d'éléments ayant un thème commun
+        /!\  le style sur les balises sections peut avoir du mal à être lu par ie
+        -->
+        <section></section>
+
+    <!-- Certaines balises HTML ont une valeur sémantique lue et connue par les sc -->
+
+    <!-- Liste de x éléments -->
+    <ul>
+        <li></li>
+    </ul>
+
+    <img> <!-- Lecture de l'attribut alt -->
+
+    <form>
+        <input>
+    </form>
+
+
+    <!-- Les titres :
+        Les titres ont une valeur sémantique :
+            h1 : un seul dans la page
+            -> On utilise les titres dans l'ordre
+                h2 : secondaire
+                h3 : tertiaire
+                ...
+    -->
+
+    <!-- Balises d'interaction :
+    - inputs...textarea, select,...
+    - boutons
+    - a / lien
+    - Object -> ressource externe interprétée comme une image
+    - area ( découpage d'images )
+    - details ( dropdown d'infos )
+
+    -> Balises accessibles avec le clavier.
+    Il faut impérativement utiliser les bonnes balises au bon moment.
+    -->
+
+    <img src="images/favicon.ico" alt="Ajouter un texte alternatif clair">
+    <!-- Pas bien: "Une image d'illustration" ni "logo du site"
+    Bien : Si l'image a un intéret: décrit l'image précisément
+    Si l'image contient un info : on réécrit cette info
+    Si l'image n'a qu'un intéret décoratif, on ne la décrit pas
+        alt=""
+        ou aria-hidden="true"
+    ARIA : Accessible Rich Internet Application
+    -> Ajouter des infos pour les sc et outils d'assistance
+    -->
+
+    <figure>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCosNE8U8r4l6IY0NHJ7icaHynM8gFLQimNg&usqp=CAU"
+        alt="Description précise de mon image si besoin">
+        <figcaption>Un coucher de soleil à New York</figcaption>
+    </figure>
+
+
+
+
+
+
+    </body>
+</html>

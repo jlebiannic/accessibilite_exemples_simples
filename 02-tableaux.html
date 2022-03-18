@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L'accessibilité des tableaux</title>
+</head>
+<body>
+
+<!-- Eviter les tableaux complexes avec colspan et rowspan -->
+
+
+
+<details>
+    <summary>Résumé du tableau</summary>
+    Il y a x d'articles dans le panier
+</details>
+
+<!-- Si pagination  :
+Page 1 sur x
+Nombre total d'éléments
+Nombre d'éléments affichés
+Nombre de pages total
+
+Ajouter la pagination en haut et en bas du tableau
+
+Propose une barre de recherche
+Filtres, options de tri du tableau
+-->
+
+
+<div>
+    <label for="search">Recherche</label>
+    <input aria-label="Rechercher dans le tableau : " id="search" type="search" placeholder="Exemple : ....">
+</div>
+<nav>
+    <ul>
+        <li>
+            <a rel="next" href="#">Suivante</a>
+        </li>
+        <li>
+            <a aria-disabled="true" rel="prev" href="#">Précédent</a>
+        </li>
+        <li>
+            <a rel="prev" href="#">2</a>
+        </li>
+        <li>
+            <a rel="prev" href="#">3</a>
+        </li>
+        <li>
+            <a href="#">160</a>
+        </li>
+    </ul>
+</nav>
+<table id="top" border="black">
+    <caption>Mon panier</caption>
+    <thead>
+        <tr>
+            <td></td>
+            <th scope="col">Produit</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Pomme</td>
+            <td>2kg</td>
+            <td>4€</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Patates</td>
+            <td>5kg</td>
+            <td>5€</td>
+        </tr>
+    </tbody>
+</table>
+<nav>
+    <ul>
+        <li>
+            <a rel="next" href="#">Suivante</a>
+        </li>
+        <li>
+            <a rel="prev" href="#">Précédent</a>
+        </li>
+        <li>
+            <a rel="prev" href="#">2</a>
+        </li>
+        <li>
+            <a rel="prev" href="#">3</a>
+        </li>
+        <li>
+            <a href="#">160</a>
+        </li>
+        <li>
+            <a href="#top">Haut du tableau</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- En bas du tableau, proposer de revenir aux filtres / en haut du tableau -->
+
+</body>
+</html>

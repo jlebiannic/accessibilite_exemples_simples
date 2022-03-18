@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Les rôles</title>
+</head>
+<body>
+
+<!--
+Landmarks :
+aria vs HTML
+role list : ul
+role listitem : li
+role main
+role header
+role footer
+role table
+role complementary : aside
+
+-----
+role search -> barre de recherche
+role contentinfo -> infos sur le site : auteur, copyright, cookies,...
+role banner -> bannière
+-->
+
+<header></header>
+<article></article>
+
+<div role="list">
+    <p role="listitem">Item 1</p>
+    <p role="listitem">Item 2</p>
+    <p role="listitem">Item 3</p>
+</div>
+
+
+<div>
+    <ol role="tablist">
+        <li role="tab" id="t1"><a href="#c1"> Chapitre 1</a></li>
+        <li role="tab" id="t2"><a href="#c2"> Chapitre 2</a></li>
+        <li role="tab" id="t3"><a href="#c3"> Chapitre 3</a></li>
+    </ol>
+
+    <div>
+        <div id="c1" aria-labelledby="t1" role="tabpanel">
+            <p>Contenu du chapitre 1</p>
+        </div>
+        <div id="c2" aria-labelledby="t2" role="tabpanel">
+            <p>Contenu du chapitre 2</p>
+        </div>
+        <div id="c3" aria-labelledby="t3" role="tabpanel">
+            <p>Contenu du chapitre 3</p>
+        </div>
+    </div>
+
+</div>
+
+
+<h2>Decriptions</h2>
+
+<section>
+    <button aria-label="Accéder au chapitre 1">Ch 1</button>
+    <!-- sortie : Accéder au chapitre 1 -->
+</section>
+
+<section>
+    <h3 id="titre1">Chapitre 1</h3>
+    <button aria-labelledby="titre1" aria-label="Accéder au chapitre 1">Ch 1</button>
+    <!-- Sortie : Chapitre 1 -->
+</section>
+
+<section>
+    <h3 id="titre2">Chapitre 1</h3>
+    <button aria-label="accéder au chapitre" aria-describedby="titre2">Ch 1</button>
+    <!-- Sortie : accéder au chapitre Chapitre 1 -->
+</section>
+
+<section>
+    <h3 id="titre3">Chapitre 1</h3>
+    <button>Accéder au chapitre</button>
+    <!-- Sortie : accéder au chapitre -->
+</section>
+
+<section>
+    <h3 id="titre4">Chapitre 1</h3>
+    <button id="b4" aria-describedby="b4 titre4">Accéder au chapitre</button>
+    <!-- Sortie : accéder au chapitre Chapitre 1-->
+    <!-- Attention : pas toujours pris en charge -->
+</section>
+
+<section>
+    <h3 id="titre5">Chapitre 2</h3>
+    <button id="b5" aria-labelledby="b5 titre5">Accéder au chapitre</button>
+    <!-- Sortie : accéder au chapitre Chapitre 1-->
+    <!-- Attention : pas toujours pris en charge -->
+</section>
+
+</body>
+</html>

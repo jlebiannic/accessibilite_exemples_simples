@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Les tailles</title>
+    <style>
+        :root {
+            --width: 80%;
+        }
+        #box {
+            width: var(--width);
+            margin: auto;
+            min-height: 500px;
+            background: teal;
+        }
+
+        button {
+            width: 10em;
+            font-size: 1.2em;
+            height: 3em;
+        }
+
+        @media screen and (max-width: 1000px){
+            #box {
+                width: 90%;
+                background: #0502c5;
+            }
+        }
+
+
+        @media screen and (max-width: 800px){
+            #box {
+                width: 98%;
+                background: #0502c5;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div>
+    <button id="btn" onclick="font()">Cliquer ici</button>
+</div>
+
+<div id="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolorum est iure mollitia officiis quas reprehenderit velit voluptatum? Eaque expedita facilis illo iste laudantium nesciunt ratione, recusandae sunt suscipit voluptatum?</div>
+
+
+<script>
+    let fs = 15;
+    function font() {
+        const btn = document.querySelector('body');
+        fs++;
+        btn.style.fontSize = fs + 'px';
+        if(fs > 30 && fs <40) {
+            document.documentElement.style.setProperty('--width', '90%')
+        } else if(fs >= 40) {
+            document.documentElement.style.setProperty('--width', '98%')
+        }
+    }
+</script>
+
+</body>
+</html>

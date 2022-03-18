@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- Lit sur le span ( défaut ) -->
+    <div aria-atomic="false"   aria-live="assertive" role="region">
+        <p>Lecture : <span id="a">Chapitre 1</span> ipsum dolor sit amet, consectetur adipisicing elit. Alias amet asperiores culpa cupiditate deleniti dolore eos laborum magni maxime minima nam nihil praesentium quae, repellat repudiandae rerum sapiente vitae voluptatum.</p>
+        <button aria-controls="a" onclick="chp()">Chapitre suivant</button>
+    </div>
+
+
+<!-- Relit le paragraphe -->
+    <div aria-atomic="true"  aria-live="assertive" role="region">
+        <p>Lecture : <span id="b">Chapitre 1</span> ipsum dolor sit amet, consectetur adipisicing elit. Alias amet asperiores culpa cupiditate deleniti dolore eos laborum magni maxime minima nam nihil praesentium quae, repellat repudiandae rerum sapiente vitae voluptatum.</p>
+        <button aria-controls="b" onclick="chp2()">Chapitre suivant</button>
+    </div>
+
+    <!-- Aria Live :
+    Zone "live" : zone qui vont se modifier
+       Rôles "traditionnels" :
+        - progressbar  : assertive / polite
+        - alert : assertive
+        - status : polite
+        - log ( chat ) : polite
+
+       Mais pas que, on peut l'utiliser ailleurs
+    -->
+
+    <script src="script.js" rel="script"></script>
+    <script>
+        let number = 1;
+        let number2 = 1;
+
+        function chp() {
+            number++;
+            $('#a').textContent = 'Chapitre ' + number;
+        }
+
+        function chp2() {
+            number2++;
+            $('#b').textContent = 'Chapitre ' + number2;
+        }
+    </script>
+
+</body>
+</html>
