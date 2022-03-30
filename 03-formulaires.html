@@ -1,108 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Créer des formulaires accessibles</title>
     <script src="script.js"></script>
     <style>
-        .error { color: red}
-        .hidden { display: none}
-        .i_error:focus {outline-color:  red}
-        .i_error {border-color: red}
+      .error {
+        color: red;
+      }
+      .hidden {
+        display: none;
+      }
+      .i_error:focus {
+        outline-color: red;
+      }
+      .i_error {
+        border-color: red;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Votre commande</h1>
 
-<h1>Votre commande</h1>
-
-<p aria-hidden="true"><sup>*</sup> champs obligatoires</p>
-<form id="form">
-    <div>
+    <p aria-hidden="true"><sup>*</sup> champs obligatoires</p>
+    <form id="form">
+      <div>
         <label for="name">Nom complet<sup aria-hidden="true">*</sup></label>
-        <input aria-required="true" id="name" type="text"
-               placeholder="Jane Doe"
-               aria-placeholder="Exemple: Jane Doe"
-               autocomplete="name"
-        >
-        <p class="error hidden" id="n_error_req">Erreur : Le champs nom est obligatoire</p>
-        <p class="error hidden" id="n_error">Erreur : Veuillez entrer un nom valide</p>
-    </div>
-    <div>
+        <input
+          aria-required="true"
+          id="name"
+          type="text"
+          placeholder="Jane Doe"
+          aria-placeholder="Exemple: Jane Doe"
+          autocomplete="name"
+        />
+        <p class="error hidden" id="n_error_req">
+          Erreur : Le champs nom est obligatoire
+        </p>
+        <p class="error hidden" id="n_error">
+          Erreur : Veuillez entrer un nom valide
+        </p>
+      </div>
+      <div>
         <label for="email">Email<sup aria-hidden="true">*</sup></label>
-        <input id="email" type="email" aria-required="true"
-               placeholder="jdoe@mail.fr"
-               aria-placeholder="Exemple: jdoe@mail.fr"
-               autocomplete="email"
-        >
-    </div>
-    <div>
+        <input
+          id="email"
+          type="email"
+          aria-required="true"
+          placeholder="jdoe@mail.fr"
+          aria-placeholder="Exemple: jdoe@mail.fr"
+          autocomplete="email"
+        />
+      </div>
+      <div>
         <label for="phone">Téléphone<sup aria-hidden="true">*</sup></label>
-        <input type="tel" id="phone" aria-required="true"
-               placeholder="Exemple: 0320123140"
-               aria-describedby="t_help"
-        >
+        <input
+          type="tel"
+          id="phone"
+          aria-required="true"
+          placeholder="Exemple: 0320123140"
+          aria-describedby="t_help"
+        />
         <p id="t_help">Format accepté : 10 chiffres</p>
-    </div>
-    <fieldset>
+      </div>
+      <fieldset>
         <legend>Vous souhaitez être contacter par :</legend>
         <div>
-            <input type="checkbox" name="contact"
-                   value="mail" id="c_mail"
-            >
-            <label for="c_mail">Email</label>
+          <input type="checkbox" name="contact" value="mail" id="c_mail" />
+          <label for="c_mail">Email</label>
         </div>
         <div>
-            <input type="checkbox" name="contact"
-                   value="mail" id="c_phone"
-            >
-            <label for="c_phone">Téléphone</label>
+          <input type="checkbox" name="contact" value="mail" id="c_phone" />
+          <label for="c_phone">Téléphone</label>
         </div>
         <div>
-            <input type="checkbox" name="contact"
-                   value="mail" id="c_bird"
-            >
-            <label for="c_bird">Pigeon Voyageur</label>
+          <input type="checkbox" name="contact" value="mail" id="c_bird" />
+          <label for="c_bird">Pigeon Voyageur</label>
         </div>
-    </fieldset>
-    <div>
+      </fieldset>
+      <div>
         <button type="submit">Valider ma commande</button>
-    </div>
-</form>
+      </div>
+    </form>
 
-
-<script>
-
-    const form = document.getElementById('form');
-    form.addEventListener('submit', (e) => {
-        $$('.error').forEach(e => e.classList.add('hidden'))
+    <script>
+      const form = document.getElementById("form");
+      form.addEventListener("submit", (e) => {
+        $$(".error").forEach((e) => e.classList.add("hidden"));
         e.preventDefault();
         let has_error = false;
-        const i_name = $('#name');
-        const i_mail = $('#email');
+        const i_name = $("#name");
+        const i_mail = $("#email");
 
-        if(!i_name.value) {
-            has_error = true;
-            i_name.setAttribute('aria-invalid', 'true');
-            i_name.setAttribute('aria-describedby', 'n_error_req');
-            const error = $('#n_error_req');
-            i_name.classList.add('i_error');
+        if (!i_name.value) {
+          has_error = true;
+          i_name.setAttribute("aria-invalid", "true");
+          i_name.setAttribute("aria-describedby", "n_error_req");
+          const error = $("#n_error_req");
+          i_name.classList.add("i_error");
 
-            error.classList.remove('hidden');
-            i_name.focus();
+          error.classList.remove("hidden");
+          i_name.focus();
         } else if (i_name.value.length < 2) {
-            has_error = true;
-            i_name.setAttribute('aria-invalid', 'true');
-            i_name.classList.add('i_error');
-            i_name.setAttribute('aria-describedby', 'n_error');
-            const error = $('#n_error');
-            error.classList.remove('hidden');
-            i_name.focus();
+          has_error = true;
+          i_name.setAttribute("aria-invalid", "true");
+          i_name.classList.add("i_error");
+          i_name.setAttribute("aria-describedby", "n_error");
+          const error = $("#n_error");
+          error.classList.remove("hidden");
+          i_name.focus();
         }
-
-
-
-    });
-
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>
